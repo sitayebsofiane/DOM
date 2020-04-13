@@ -11,7 +11,7 @@ subTitle.textContent="bruno";
 var contents = document.querySelectorAll(".content");
 contents.forEach(element => element.style.backgroundColor="blue");
 
-//Function to delete article on click
+//Function to delete article on click or display
 var bruno = 0;
  function deleteContent(){
     if(bruno%2===0)
