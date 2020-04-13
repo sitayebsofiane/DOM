@@ -4,15 +4,40 @@
     <meta charset="utf-8">
     <title>Exercice DOM</title>
     <link rel="stylesheet" href="main.css">
+    <!-- importation de babel pour interpreter du jsx -->
+    <script src= "https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- importation du react -->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   </head>
   <body>
-    <h1>Ma liste de courses</h1>
+      <div id="App">
+
+    <!-- <h1>Ma liste de courses</h1>
 
     <input type="text" id="input">
     <button id="addItem">Ajouter à la liste</button>
 
     <ul id="shoppingList">
-    </ul>
-    <script type="text/javascript" src="main.js"></script>
+    </ul> -->
+    </div>
+    <script type="text/babel">
+      class App extends React.Component {
+        render(){
+          return(
+            <div>
+              <form>
+                <label>
+                  Produit :
+                  <input type="text" id="input" />
+                </label>
+                <button id="addItem">Ajouter à la liste</button>
+              </form>
+            </div>
+          )
+        }
+      }
+      ReactDOM.render(<App />,document.getElementById("App"));
+    </script>
   </body>
 </html>
