@@ -4,23 +4,29 @@
 
 const e = React.createElement;
 
-class LikeButton extends React.Component {
+class AddButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { liked: false };
+    this.state1 = { produits: Array() };
+    this.state2 = { input: document.querySelector('#input')};
+    this.state3 = { input: document.querySelector('#shoppingList')};
   }
 
-  render() {
-    if (this.state.liked) {
-      return 'element ajouté';
-    }
+  addInList(){
+    this.state1.produits.push(this.state2.input.value);
+    this.state2.input.value="";
 
+    console.log(this.state1.produits);
+    
+  }
+  render() {
     return e(
       'button',
-      { onClick: () => this.setState({ liked: true }) },
-      'add'
+      {className: 'btn btn-primary', onClick: ()=> this.addInList()},
+      'Ajouter a la liste'
     );
   }
 }
+
 const domContainer = document.querySelector('#addItem');
-ReactDOM.render(e(LikeButton), domContainer);
+ReactDOM.render(e(AddButton), domContainer);
