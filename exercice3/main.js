@@ -18,6 +18,7 @@ class AddButton extends React.Component {
     this.state2.input.value='';
     affichage = '<li>'+this.state1.produits.join('</li><li>')+'</li>';
     this.state3.shoppingList.innerHTML=affichage;
+    //affichage a la console de la liste des produit
     console.log(this.state1.produits);
     
   }
