@@ -9,13 +9,15 @@ class AddButton extends React.Component {
     super(props);
     this.state1 = { produits: Array() };
     this.state2 = { input: document.querySelector('#input')};
-    this.state3 = { input: document.querySelector('#shoppingList')};
+    this.state3 = { shoppingList: document.querySelector('#shoppingList')};
   }
 
   addInList(){
+    let affichage = '';
     this.state1.produits.push(this.state2.input.value);
-    this.state2.input.value="";
-
+    this.state2.input.value='';
+    affichage = '<li>'+this.state1.produits.join('</li><li>')+'</li>';
+    this.state3.shoppingList.innerHTML=affichage;
     console.log(this.state1.produits);
     
   }
