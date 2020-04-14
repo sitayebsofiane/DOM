@@ -1,13 +1,26 @@
-var input = 
-var addItem = 
-var shoppingList = 
 
-function addListItem
 
-addItem.onclick = 
+'use strict';
 
-  if
+const e = React.createElement;
 
-input.onkeyup = 
+class LikeButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { liked: false };
+  }
 
-    if
+  render() {
+    if (this.state.liked) {
+      return 'element ajouté';
+    }
+
+    return e(
+      'button',
+      { onClick: () => this.setState({ liked: true }) },
+      'add'
+    );
+  }
+}
+const domContainer = document.querySelector('#addItem');
+ReactDOM.render(e(LikeButton), domContainer);
