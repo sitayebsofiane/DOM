@@ -23,11 +23,14 @@ class AddButton extends React.Component {
     
   }
   render() {
+    // return( <button className="btn btn-primary" onClick={()=> this.addInList()}> 
+    // { 'Ajouter a la liste' }
+    // </button>);
     return e(
       'button',
       {className: 'btn btn-primary', onClick: ()=> this.addInList()},
       'Ajouter a la liste'
-    );
+     );
   }
 }
 
